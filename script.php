@@ -63,10 +63,7 @@ if ($cache->initCache($cacheTime, $cacheKey, $cacheDirPath)) {
                 $sectionName = $section['NAME'];
             }
         } else {
-            $iblock = IblockTable::getById($iblockId)->fetch();
-            if ($iblock) {
-                $sectionName = $iblock['NAME'];
-            }
+            $sectionName = null;
         }
         $authorPropResult = ElementPropertyTable::getList([
             'select' => ['VALUE'],
